@@ -1,0 +1,43 @@
+/* Page-level styles for the JoyCare Club landing page. */
+body { font-size: 18px; line-height: 1.6; }
+a:hover { color: var(--color-accent-700); }
+.wrap { max-width: 1140px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 48px); }
+.sec { padding: clamp(56px, 8vw, 112px) 0 0; }
+.eyebrow { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 var(--space-3); }
+.h2 { font-size: clamp(30px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 var(--space-4); max-width: 17em; }
+.lede { font-size: clamp(19px, 2.1vw, 23px); line-height: 1.5; max-width: 32em; }
+.grid3 { display: grid; gap: clamp(20px, 3vw, 36px); grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.soft { border-radius: 26px; overflow: hidden; }
+.feat { padding: clamp(24px, 3vw, 34px); border-radius: 22px; background: var(--color-surface); display: flex; flex-direction: column; gap: var(--space-2); }
+.feat i { font-size: 44px; color: var(--color-accent); line-height: 1; }
+.feat h3 { font-size: 24px; margin: 0; }
+.feat p { margin: 0; font-size: 17px; }
+.phone { width: 100%; max-width: 244px; aspect-ratio: 9 / 18.5; border: 9px solid var(--color-text); border-radius: 34px; background: var(--color-bg); padding: 18px 14px 14px; display: flex; flex-direction: column; gap: 12px; }
+details { border-top: 1px solid var(--color-divider); padding: var(--space-3) 0; }
+summary { cursor: pointer; font-family: var(--font-heading); font-weight: 600; font-size: 20px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--color-accent); }
+details[open] summary::after { content: "–"; }
+summary:hover { color: var(--color-accent-700); }
+.big-btn { min-height: 56px; font-size: 18px; padding-inline: var(--space-6); border-radius: 999px; white-space: nowrap; }
+.nav a.btn { white-space: nowrap; }
+figure.cmyk figcaption { font-size: 14px; margin-top: var(--space-2); }
+
+/* Image slots — empty placeholders until a photo is supplied. The CMYK
+   separation filter in broadsheet.css only bites once there's a real image. */
+.image-slot {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.image-slot--empty {
+  background: var(--color-surface);
+  border: 1px dashed var(--color-neutral-400);
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-neutral-600);
+}
