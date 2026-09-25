@@ -1,8 +1,7 @@
 /* ── Journex design system ────────────────────────────────────────────
-   Ported from the JOYchum Website bundle. Dark mode is the signature
-   look and lives on bare :root; .theme-light re-points the semantic
-   aliases. Tokens only — components carry their own inline styles, the
-   way the source design did.
+   Ported from the JOYchum Website v2 bundle — the investor page. Tokens
+   only; components carry their own inline styles, the way the source
+   design did.
 ------------------------------------------------------------------ */
 
 /* ── Webfonts ─────────────────────────────────────────────────────────
@@ -27,76 +26,37 @@
   font-display: swap;
 }
 
-/* ── Color tokens ─────────────────────────────────────────────────────
-   One brand hue (violet) carries identity and every CTA. A single muted
-   mint is the ONLY accent — reserved for progress and success, so it
-   covers under 5% of any screen.
+/* ── Color tokens ─────────────────────────────────────────
+   A warm paper palette: ink on beige, with one muted tan carrying
+   emphasis and a single sage reserved for progress. The deck-like
+   sections (roadmap) invert to ink with warm type on top.
 ------------------------------------------------------------------ */
 :root {
-  /* — Raw brand scale (mode-independent) — */
-  --violet-700: #3a3199; /* deep brand — text/icon on tint (light) */
-  --violet-600: #5a4fe0; /* primary brand — CTA, active, identity */
-  --violet-400: #8e86f2; /* light brand — highlights, text on violet */
-  --violet-100: #eceafd; /* brand tint surface (light mode) */
+  --bg: #EEE9E1;              /* warm paper ground */
+  --bg-sunk: #E4DFD7;         /* banded sections: market, invest */
+  --bg-raised: #F6F3EE;       /* cards and the product band */
+  --ink: #3B3834;             /* brand ink — CTAs, logo, dark section */
+  --ink-on-dark: #F1ECE4;     /* type on the ink section */
+  --ink-on-dark-muted: #B5AB9C;
 
-  --mint-600: #1fa877; /* success — bright mode */
-  --mint-500: #2fbf8f; /* success — dark mode */
+  --brand: var(--ink);
+  --brand-highlight: #8A7A66; /* muted tan — emphasis, eyebrows */
+  --brand-surface: #E2DBD0;   /* icon tiles */
 
-  --base-dark: #0c0a14; /* deep violet-anthracite background */
-  --base-light: #f3f2fa; /* very light violet-white background */
+  --glass-surface: #F6F3EE;
+  --glass-surface-2: #EFEBE4;
+  --glass-edge: #DAD3C8;
+  --rule: #CFC7BB;            /* table and list rules, a touch stronger */
 
-  --ink-900: #1a1730; /* near-black violet ink */
-  --ink-500: #6e6b85; /* muted violet-grey */
-  --white: #ffffff;
+  --text-primary: #2A2825;
+  --text-secondary: #67625C;
+  --text-tertiary: #7E786F;
 
-  /* — Semantic aliases · DARK MODE (default) — */
-  --brand: var(--violet-600);
-  --brand-highlight: var(--violet-400);
-  --brand-surface: rgba(90, 79, 224, 0.5);
+  --success: #6F7F5E;         /* sage — progress only */
+  --track: #DDD6CB;
 
-  --bg: var(--base-dark);
-
-  --glass-surface: rgba(255, 255, 255, 0.07);
-  --glass-surface-2: rgba(255, 255, 255, 0.05); /* nested stat tile */
-  --glass-edge: rgba(255, 255, 255, 0.12);
-
-  --text-primary: var(--white);
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --text-tertiary: rgba(255, 255, 255, 0.45);
-
-  --success: var(--mint-500);
-  --track: rgba(255, 255, 255, 0.1);
-
-  /* — Soft brand glow that sits under the glass — */
-  --glow-1: var(--violet-600);
-  --glow-2: var(--violet-700);
-  --glow-opacity-1: 0.35;
-  --glow-opacity-2: 0.3;
-
-  color-scheme: dark;
-}
-
-.theme-light {
-  --brand-highlight: var(--violet-700);
-  --brand-surface: var(--violet-100);
-
-  --bg: var(--base-light);
-
-  --glass-surface: rgba(255, 255, 255, 0.6);
-  --glass-surface-2: rgba(255, 255, 255, 0.55);
-  --glass-edge: rgba(255, 255, 255, 0.85);
-
-  --text-primary: var(--ink-900);
-  --text-secondary: var(--ink-500);
-  --text-tertiary: #9b98ac;
-
-  --success: var(--mint-600);
-  --track: rgba(26, 23, 48, 0.08);
-
-  --glow-1: var(--violet-400);
-  --glow-2: #c9c4f7;
-  --glow-opacity-1: 0.35;
-  --glow-opacity-2: 0.5;
+  --shadow-cta: 0 4px 14px rgba(42, 40, 37, 0.16);
+  --shadow-card: 0 12px 40px rgba(42, 40, 37, 0.12);
 
   color-scheme: light;
 }
@@ -206,9 +166,28 @@
   }
 }
 
+/* ── Merge diagram ────────────────────────────────────────────────────
+   The Body/Mind circles are fixed at 250px and offset ±215px from centre,
+   so they span 430px whatever the viewport, and they start a further 90px
+   apart before the merge animation runs. Clipping keeps that resting state
+   from widening the page; the merged state fits, so nothing is cut once
+   the animation has played. Below ~520px the figure also scales to fit.
+------------------------------------------------------------------ */
+.jx-merge {
+  overflow: clip;
+}
+
+@media (max-width: 520px) {
+  .jx-merge {
+    transform: scale(0.72);
+    transform-origin: center;
+    height: 230px !important;
+  }
+}
+
 /* ── Tabler Icons ─────────────────────────────────────────────────────
-   The font is subset to the sixteen glyphs this page uses (864KB of the
-   full 5,717-icon set down to under 4KB). Adding an icon means
+   The font is subset to the eleven glyphs this page uses (864KB of the
+   full 5,717-icon set down to under 3KB). Adding an icon means
    re-subsetting from the original bundle in web/ — see the README.
 ------------------------------------------------------------------ */
 @font-face {
@@ -232,20 +211,15 @@
 }
 
 .ti-arrow-right:before { content: "\ea1f"; }
-.ti-arrows-join:before { content: "\edaf"; }
 .ti-brain:before { content: "\f59f"; }
 .ti-building-hospital:before { content: "\ea4d"; }
-.ti-chart-line:before { content: "\ea5c"; }
-.ti-ear:before { content: "\ebce"; }
-.ti-heart-handshake:before { content: "\f0f3"; }
-.ti-home:before { content: "\eac1"; }
-.ti-mail:before { content: "\eae5"; }
-.ti-map-pin:before { content: "\eae8"; }
-.ti-player-play:before { content: "\ed46"; }
+.ti-check:before { content: "\ea5e"; }
+.ti-file-text:before { content: "\eaa2"; }
+.ti-minus:before { content: "\eaf2"; }
 .ti-plus:before { content: "\eb0b"; }
-.ti-sparkles:before { content: "\f6d7"; }
-.ti-trending-down:before { content: "\eb42"; }
+.ti-shield-check:before { content: "\eb22"; }
 .ti-users:before { content: "\ebf2"; }
+.ti-volume:before { content: "\eb51"; }
 .ti-walk:before { content: "\ec87"; }
 
 /* ── Page base ──────────────────────────────────────────────────────── */
@@ -253,7 +227,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--base-dark);
+  background: var(--bg);
 }
 
 html {
@@ -261,12 +235,12 @@ html {
 }
 
 a {
-  color: var(--brand-highlight);
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--text-primary);
+  color: var(--brand-highlight);
 }
 
 @keyframes jcWave {

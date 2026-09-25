@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "JOYchum — stay steady, stay sharp, stay home",
   description:
-    "A voice coach that trains balance and memory together — in one short daily session, hands-free. Cognitive-motor training for 65+.",
+    "A voice coach for adults 65+ that trains balance and memory together. Raising a €500K pre-seed round.",
 };
 
 export default function RootLayout({

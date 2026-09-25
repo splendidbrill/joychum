@@ -1,8 +1,6 @@
-/** The two knobs the source design exposed as editable props. */
+/** The one knob the source design exposed as an editable prop. */
 export const siteConfig = {
-  /** "dark" is the signature look; "light" applies .theme-light. */
-  theme: "dark" as "dark" | "light",
-  /** Off disables the reveal, merge, draw and waveform animations. */
+  /** Off disables the reveals, merge, draw, count-up, bar fills and waveform. */
   motion: true,
   contactEmail: "hello@joychum.eu",
 } as const;

@@ -1,10 +1,11 @@
 # JOYchum
 
-The JOYchum homepage, as a Next.js app.
+The JOYchum investor page, as a Next.js app.
 
-Ported from `web/JOYchum Website.html` — a self-extracting bundle that packed
-the page, the Journex design system, three photos and an icon font into one
-file. This repo is that bundle unpacked into real source.
+Ported from `web/JOYchum Website v2 (3).html` — a
+self-extracting bundle that packed the page, the Journex design system, three
+photos and an icon font into one file. This repo is that bundle unpacked into
+real source.
 
 ## Running it
 
@@ -19,19 +20,22 @@ npm run lint
 
 ```
 app/
-  page.tsx                 the homepage (server component)
+  page.tsx                 the investor page (server component)
   layout.tsx               document shell, metadata, no-JS reveal fallback
-  config.ts                theme / motion / contact email
+  config.ts                motion / contact email
   components/
     Button.tsx             the Journex button — primary, secondary, tertiary
     ActionButton.tsx       Button plus the scroll-to and mailto behaviours
     Reveal.tsx             scroll-in fade-up, and the shared useInView hook
-    MergeDiagram.tsx       Body + Mind circles merging into "Dual-task"
+    CountUpStat.tsx        market stats that count up on scroll-in
+    MergeDiagram.tsx       Body + Mind circles merging into the brand mark
     DualTaskChart.tsx      the progress line, drawn on as it scrolls in
+    RoadmapTrack.tsx       the timeline rail that fills across
+    FundBars.tsx           use-of-funds bar + legend, grown on scroll-in
     VoiceCoachCard.tsx     hero overlay: waveform + rotating coach prompt
   styles/journex.css       the whole design system: tokens, icons, base
   globals.css              imports journex.css
-public/fonts/              Tabler Icons, subset to the 16 glyphs in use
+public/fonts/              Tabler Icons, subset to the 11 glyphs in use
 public/images/             the three photos from the bundle
 web/                       the original bundled HTML, kept for reference
 design/                    the earlier JoyCare Club bundle (superseded)
@@ -39,13 +43,19 @@ design/                    the earlier JoyCare Club bundle (superseded)
 
 ## Things worth knowing
 
-**Dark mode is the design.** The signature look lives on bare `:root`;
-`.theme-light` re-points the semantic aliases. Flip `theme` in `app/config.ts`
-to swap — the page applies `.theme-light` to its own wrapper.
+**One warm palette, no theme switch.** Ink on beige, with a single muted tan
+for emphasis and one sage reserved for progress. The roadmap band inverts to
+ink. All of it lives in `:root` in `journex.css` — the v1 dark theme and its
+`.theme-light` counterpart are gone.
 
 **`motion: false` turns off every animation.** The reveals, the circle merge,
-the chart draw and the waveform all take it as a prop and render their final
-state instead. `prefers-reduced-motion` is honoured separately in CSS.
+the chart draw, the stat count-ups, the bar fills and the waveform all take it
+as a prop and render their final state instead. `prefers-reduced-motion` is
+honoured separately in CSS.
+
+**The seven sections are numbered.** 01 problem, 02 gap, 03 product, 04
+business model, 05 roadmap, 06 team, 07 the ask — the eyebrow labels are part
+of the design, so keep them in step if you reorder anything.
 
 **Only the interactive parts are client-side.** The page itself is a server
 component; anything with an observer, a timer or a click handler is marked
@@ -53,9 +63,9 @@ component; anything with an observer, a timer or a click handler is marked
 strings to a client component but not an `onClick`.
 
 **The icon font is subset, not trimmed.** The bundle shipped 5,717 Tabler
-icons at 864KB; `public/fonts/tabler-icons-subset.woff2` holds the 16 this
-page uses, at under 4KB. To add an icon, re-subset from the original woff2
-inside `web/JOYchum Website.html` and add its `content` rule to `journex.css`.
+icons at 864KB; `public/fonts/tabler-icons-subset.woff2` holds the 11 this
+page uses, at under 3KB. To add an icon, re-subset from the original woff2
+inside `web/JOYchum Website v2 (3).html` and add its `content` rule to `journex.css`.
 Note the source's own woff2 has a malformed GSUB table — subset from the TTF
 and drop the layout tables.
 
@@ -66,9 +76,20 @@ Apple devices, the system-ui stack elsewhere. Drop licensed woff2 files into
 
 **The nav wraps below 560px.** The source design was drawn at desktop width,
 where the bar is one row; on a phone that row overflowed and the page wrapper's
-`overflow: hidden` clipped the "Join the pilot" button out of reach. The
-`.jx-nav` rules in `journex.css` let it wrap instead. Desktop is unchanged.
+links crowded the "For investors" button off the edge. The `.jx-nav` rules
+in `journex.css` let it wrap instead. Desktop is unchanged.
 
-**There is no backend.** "Join the pilot" scrolls to the pilot section and
-"Become a pilot partner" opens a mail composer to the address in
+**The merge diagram is clipped on purpose.** Its circles are fixed at 250px
+and offset ±215px, and they rest a further 90px apart before the animation
+runs — wider than a phone. `.jx-merge` clips that resting state so it cannot
+widen the page, and scales the figure below 520px. The merged state fits, so
+nothing is cut once the animation has played.
+
+**There is no backend.** The CTAs scroll to `#product`/`#invest`, and "Request
+the deck" and "Become a pilot partner" open a mail composer to the address in
 `app/config.ts`. Privacy and Imprint are placeholder links back to the top.
+
+**The market figures are approximations.** The stats carry a "Sources:
+Eurostat, WHO Europe (approx.)" note and the Dual-Task Cost chart is labelled
+"Illustrative", both straight from the design. Check them before this goes in
+front of investors.

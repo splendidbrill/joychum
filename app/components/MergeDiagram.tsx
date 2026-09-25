@@ -7,13 +7,11 @@ const EASE = "cubic-bezier(0.19,1,0.22,1)";
 
 const circle: CSSProperties = {
   position: "absolute",
-  top: 10,
+  top: 20,
   left: "50%",
-  width: 240,
-  height: 240,
+  width: 250,
+  height: 250,
   borderRadius: "50%",
-  background: "var(--glass-surface)",
-  border: "1px solid var(--glass-edge)",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -22,9 +20,10 @@ const circle: CSSProperties = {
 };
 
 /**
- * Body and Mind drift in from either side and resolve into "Dual-task".
+ * Body and Mind drift in from either side and resolve into the brand mark.
  * The two circles start pushed 90px apart and slide together; the centre
- * pill fades up 0.7s later, once they overlap.
+ * pill fades up 0.7s later, once they overlap. Outlined, not filled — the
+ * overlap has to stay readable where the two rings cross.
  */
 export default function MergeDiagram({ motion = true }: { motion?: boolean }) {
   const { ref, inView } = useInView<HTMLDivElement>(motion);
@@ -41,16 +40,30 @@ export default function MergeDiagram({ motion = true }: { motion?: boolean }) {
   return (
     <div
       ref={ref}
+      className="jx-merge"
       data-merge-wrap=""
-      style={{ position: "relative", width: "100%", maxWidth: 560, height: 260 }}
+      style={{
+        position: "relative",
+        height: 300,
+        maxWidth: 520,
+        width: "100%",
+        justifySelf: "center",
+      }}
     >
       <div
         data-merge="left"
-        style={{ ...circle, marginLeft: -210, alignItems: "flex-start", paddingLeft: 44, ...side(-1) }}
+        style={{
+          ...circle,
+          marginLeft: -215,
+          border: "1.5px solid var(--ink)",
+          alignItems: "flex-start",
+          paddingLeft: 46,
+          ...side(-1),
+        }}
       >
         <i
           className="ti ti-walk"
-          style={{ fontSize: 26, color: "var(--brand-highlight)" }}
+          style={{ fontSize: 26, color: "var(--ink)" }}
           aria-hidden="true"
         />
         <span style={{ fontSize: 17, fontWeight: 500 }}>Body</span>
@@ -58,7 +71,14 @@ export default function MergeDiagram({ motion = true }: { motion?: boolean }) {
 
       <div
         data-merge="right"
-        style={{ ...circle, marginLeft: -30, alignItems: "flex-end", paddingRight: 44, ...side(1) }}
+        style={{
+          ...circle,
+          marginLeft: -35,
+          border: "1.5px solid var(--brand-highlight)",
+          alignItems: "flex-end",
+          paddingRight: 46,
+          ...side(1),
+        }}
       >
         <i
           className="ti ti-brain"
@@ -93,15 +113,14 @@ export default function MergeDiagram({ motion = true }: { motion?: boolean }) {
           style={{
             padding: "8px 14px",
             borderRadius: 999,
-            background: "var(--brand)",
-            color: "#fff",
+            background: "var(--ink)",
+            color: "var(--bg-raised)",
             fontSize: 14,
             fontWeight: 500,
-            boxShadow: "var(--shadow-cta)",
             whiteSpace: "nowrap",
           }}
         >
-          Dual-task
+          JOYchum
         </span>
       </div>
     </div>

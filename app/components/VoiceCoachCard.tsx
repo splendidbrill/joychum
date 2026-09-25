@@ -9,7 +9,7 @@ const PROMPTS = [
   "Walk slowly. Name a fruit for every step.",
 ];
 
-/** Every fifth bar is brand-tinted, so the wave reads as a voice, not a meter. */
+/** Every fifth bar takes the tan, so the wave reads as a voice, not a meter. */
 const BARS = Array.from({ length: 22 }, (_, k) => ({
   brand: k % 5 === 2,
   scale: 0.3 + 0.7 * Math.abs(Math.sin(k * 1.3)),
@@ -36,17 +36,14 @@ export default function VoiceCoachCard({ motion = true }: { motion?: boolean }) 
     <div
       style={{
         position: "absolute",
-        left: -28,
-        right: 28,
-        bottom: 28,
+        left: -24,
+        right: 32,
+        bottom: 0,
         padding: "18px 20px",
-        borderRadius: 22,
-        background: "rgba(20,17,34,.55)",
-        border: "1px solid rgba(255,255,255,.14)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        boxShadow: "var(--shadow-glass)",
-        color: "#fff",
+        borderRadius: 20,
+        background: "var(--bg-raised)",
+        border: "1px solid var(--glass-edge)",
+        boxShadow: "var(--shadow-card)",
         display: "flex",
         flexDirection: "column",
         gap: 12,
@@ -56,36 +53,42 @@ export default function VoiceCoachCard({ motion = true }: { motion?: boolean }) 
         style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}
       >
         <div
-          style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, fontWeight: 500 }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            fontSize: 13,
+            color: "var(--text-secondary)",
+          }}
         >
           <span
             style={{
               width: 32,
               height: 32,
               borderRadius: 12,
-              background: "rgba(90,79,224,.5)",
+              background: "var(--brand-surface)",
               display: "grid",
               placeItems: "center",
             }}
           >
             <i
-              className="ti ti-sparkles"
-              style={{ fontSize: 17, color: "#8E86F2" }}
+              className="ti ti-volume"
+              style={{ fontSize: 17, color: "var(--ink)" }}
               aria-hidden="true"
             />
           </span>
-          Your coach is speaking
+          Coach, speaking
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 3, height: 26 }} aria-hidden="true">
+        <div style={{ display: "flex", alignItems: "center", gap: 3, height: 24 }} aria-hidden="true">
           {BARS.map((b, k) => (
             <span
               key={k}
               style={{
                 width: 3,
-                height: 26,
+                height: 24,
                 borderRadius: 2,
-                background: b.brand ? "#8E86F2" : "rgba(255,255,255,.75)",
+                background: b.brand ? "var(--brand-highlight)" : "var(--ink)",
                 transformOrigin: "center",
                 transform: `scaleY(${b.scale})`,
                 animation: motion
