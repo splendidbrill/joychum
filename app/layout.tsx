@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import PrintPlates from "./components/PrintPlates";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "JoyCare Club — steady body, sharp mind, independent life",
+  title: "JOYchum — stay steady, stay sharp, stay home",
   description:
-    "JoyCare Club trains body and mind together — the way real life asks for them — so older adults can keep living independently, at home, on their own terms.",
+    "A voice coach that trains balance and memory together — in one short daily session, hands-free. Cognitive-motor training for 65+.",
 };
 
 export default function RootLayout({
@@ -13,10 +12,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
-        <PrintPlates />
-        {children}
-      </body>
+      <head>
+        {/* The scroll-reveal animations start elements hidden inline, so
+            without JS they would never appear. This forces them visible. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

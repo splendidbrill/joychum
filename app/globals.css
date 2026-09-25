@@ -1,5 +1,2 @@
-/* Broadsheet design system, the icon subset, then page-level styles.
-   Order matters: landing.css intentionally overrides system defaults. */
-@import "./styles/broadsheet.css";
-@import "./styles/phosphor.css";
-@import "./styles/landing.css";
+/* The Journex design system — tokens, icon subset, and page base. */
+@import "./styles/journex.css";
