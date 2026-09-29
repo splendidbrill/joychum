@@ -931,7 +931,7 @@ export default function Home() {
                 lineHeight: 0.95,
               }}
             >
-              €500K
+              €200K
             </span>
             <p
               style={{
