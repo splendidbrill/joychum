@@ -1,3 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JOYchum: stay steady, stay sharp, stay home</title>
+<meta name="description" content="A voice coach for adults 65+ that trains balance and memory together — one short session a day, hands-free.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JOYchum: Stay steady. Stay sharp. Stay home.">
+<meta property="og:description" content="A voice coach for adults 65+ that trains balance and memory together. Raising €500K pre-seed.">
+<meta property="og:image" content="[TODO: og-image URL, 1200×630]">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
 /* ── Tokens: JoyCare Club design system, project/tokens.json ── */
 :root {
   --surface: #f7f6f4; --surface-sunken: #eeedea; --surface-raised: #ffffff;
@@ -462,7 +478,7 @@ main section[id] { scroll-margin-top: 88px; }
 .timeline li::after { content: ""; position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: var(--radius-full); background: var(--surface); border: 2px solid var(--stone-700); }
 .milestone__title { font-size: 20px; line-height: 28px; font-weight: 700; margin-top: var(--space-1); }
 @media (min-width: 1024px) {
-  .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+  .timeline { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-4); }
   .timeline li { padding: var(--space-5) 0 0; }
   .timeline li::before { left: 0; right: calc(var(--space-4) * -1); top: 5px; bottom: auto; border-left: 0; border-top: 2px solid var(--line-strong); }
   .timeline li:last-child::before { display: block; right: 0; }
@@ -680,3 +696,322 @@ footer { background: var(--blue-50); color: var(--ink); border-top: 1px solid co
 footer p { color: var(--ink-muted); }
 footer a { color: var(--accent); }
 footer :focus-visible { outline-color: var(--accent); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Shared clip path for the small mode marks -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="lensL"><circle cx="18" cy="16" r="14"/></clipPath></defs></svg>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="JOYchum, back to top">
+      <svg class="mode" width="36" height="24" viewBox="0 0 48 32" aria-hidden="true"><circle class="m-move" cx="18" cy="16" r="14"/><circle class="m-mind" cx="30" cy="16" r="14"/><circle class="m-both" cx="30" cy="16" r="14" clip-path="url(#lensL)"/></svg>
+      JOYchum
+    </a>
+    <nav aria-label="Sections">
+      <ul class="nav__links">
+        <li><a href="#product">Product</a></li>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--secondary" href="#invest">For investors</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">Cognitive-motor training for independent ageing</p>
+      <h1 class="display" id="hero-title">Stay steady. Stay sharp. <span class="quiet">Stay home.</span></h1>
+      <p class="lead">A voice coach for adults 65+ that trains balance and memory together — one short session a day, hands-free.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#product">See how it works</a>
+        <a class="btn btn--secondary" href="#invest">Raising €500K pre-seed</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <div class="photo">
+        <img src="img/session-seated-leg-raise.jpg" width="1199" height="896" alt="An older woman sits in an armchair in her bright living room and raises one leg straight out in front of her.">
+      </div>
+      <div class="glass-float glass-float--prompt">
+        <div class="coach__top">
+          <p class="caption">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v4M8 21h8"/></svg>
+            Coach, speaking
+          </p>
+          <button class="btn btn--secondary btn--icon" type="button" id="coach-toggle" aria-label="Pause example prompts" aria-pressed="false" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+        </div>
+        <p class="heading" id="coach-prompt">“Walk to the fridge. Name three things inside.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 The problem -->
+<section class="band band--sunken" id="market" aria-labelledby="market-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">01 — The problem</p>
+        <h2 class="title" id="market-title">Independence fails one small decline at a time.</h2>
+      </div>
+      <p class="text">Falls are a leading cause of lost independence after 65. They happen when attention and movement compete — yet that is rarely trained.</p>
+    </div>
+    <div>
+      <dl class="stats">
+        <div><dt class="stat__value">90M+</dt><dd>adults aged 65+ across the EU27 today</dd></div>
+        <div><dt class="stat__value">30%</dt><dd>of Europeans will be 65+ by 2050, up from ~21%</dd></div>
+        <div><dt class="stat__value">0</dt><dd>mainstream EU apps that train body and mind together</dd></div>
+      </dl>
+      <p class="caption stats__source">Sources: Eurostat, WHO Europe (approx.)</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 The gap -->
+<section class="band" id="gap" aria-labelledby="gap-title">
+  <div class="container split">
+    <div class="venn" aria-hidden="true">
+      <svg class="venn__art" viewBox="0 0 520 340" focusable="false">
+        <defs><clipPath id="vennBody"><circle cx="180" cy="170" r="160"/></clipPath></defs>
+        <circle class="m-move" cx="180" cy="170" r="160"/>
+        <circle class="m-mind" cx="340" cy="170" r="160"/>
+        <circle class="m-both" cx="340" cy="170" r="160" clip-path="url(#vennBody)"/>
+      </svg>
+      <span class="venn__label venn__label--body"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 20 3-6 3 3v4M7 12l3-4 4 1 3 3M12 14l-1-5"/></svg>Body</span>
+      <span class="venn__label venn__label--mind"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 0 0-5.8-1A3 3 0 0 0 4 8.5a3 3 0 0 0 .5 5.5A3 3 0 0 0 8 19a3 3 0 0 0 4 1V5zM12 5a3 3 0 0 1 5.8-1A3 3 0 0 1 20 8.5a3 3 0 0 1-.5 5.5A3 3 0 0 1 16 19a3 3 0 0 1-4 1"/></svg>Mind</span>
+      <span class="venn__pill">JOYchum</span>
+    </div>
+    <div>
+      <p class="eyebrow">02 — The gap</p>
+      <h2 class="title" id="gap-title">Apps train the body or the mind. Never both at once.</h2>
+      <div class="glass-panel compare-wrap">
+        <table class="compare">
+          <thead><tr><th scope="col"><span class="sr-only">App type</span></th><th scope="col">Body</th><th scope="col">Mind</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Brain-training apps</th><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><span class="sr-only">No</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Yes</span></td></tr>
+            <tr><th scope="row">Senior fitness apps</th><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Yes</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><span class="sr-only">No</span></td></tr>
+            <tr><th scope="row">Gait / fall-risk analysis</th><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Yes</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><span class="sr-only">No</span></td></tr>
+            <tr class="compare__us"><th scope="row">JOYchum</th><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Yes</span></td><td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="sr-only">Yes</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 What we're building -->
+<section class="band band--blue" id="product" aria-labelledby="product-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">03 — What we're building</p>
+        <h2 class="title" id="product-title">One daily session. Listen, move, improve.</h2>
+      </div>
+      <p class="text">Our MVP is one voice-first exercise flow with adaptive difficulty. Nothing extra, built and tested by the founders.</p>
+    </div>
+    <ul class="features">
+      <li>
+        <div class="feature__media feature__media--photo">
+          <img src="img/Exercise-with-phone.jpeg" width="896" height="1200" loading="lazy" alt="An older man stands in his living room doing a shoulder exercise while a phone on the table guides him by voice.">
+        </div>
+        <p class="caption">1 · Voice-led</p>
+        <h3 class="heading">The coach speaks every step</h3>
+        <p>No screen to watch while moving.</p>
+      </li>
+      <li>
+        <div class="feature__media feature__media--glow-warm">
+          <ul class="pairs" aria-label="Example pairs of a body task and a mind task">
+            <li class="pill pair pair--faded" aria-hidden="true"><span class="pair__item chip--move"><span class="chip__dot"></span>March</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Name animals</span></li>
+            <li class="pill pair pair--soft"><span class="pair__item chip--move"><span class="chip__dot"></span>Walk</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Name fruits</span></li>
+            <li class="pill pair"><span class="pair__item chip--move"><span class="chip__dot"></span>Balance</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Count back</span></li>
+            <li class="pill pair"><span class="pair__item chip--move"><span class="chip__dot"></span>Reach</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Recall a list</span></li>
+            <li class="pill pair pair--soft"><span class="pair__item chip--move"><span class="chip__dot"></span>Step</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Spell words</span></li>
+            <li class="pill pair pair--faded" aria-hidden="true"><span class="pair__item chip--move"><span class="chip__dot"></span>Tap toes</span><span class="pair__plus" aria-hidden="true">+</span><span class="pair__item"><span class="chip__dot"></span>Name colours</span></li>
+          </ul>
+        </div>
+        <p class="caption">2 · Dual-task</p>
+        <h3 class="heading">Balance and memory, together</h3>
+        <p>Difficulty adapts to each person.</p>
+      </li>
+      <li>
+        <div class="feature__media feature__media--glow-sage measure" role="img" aria-label="Illustrative chart: Dual-Task Cost falls to 14% between week 1 and week 8.">
+          <p class="chart__label"><span>Dual-Task Cost</span><span class="tag-example">Illustrative</span></p>
+          <p class="figure measure__value">14<small>%</small></p>
+          <svg class="measure__line" viewBox="0 0 300 160" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="dtcArea" x1="0" y1="0" x2="0" y2="1">
+                <stop class="measure__area-top" offset="0"/>
+                <stop class="measure__area-bottom" offset="1"/>
+              </linearGradient>
+              <filter id="dtcSoft" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+            <line class="measure__grid" x1="0" y1="50" x2="300" y2="50"/>
+            <line class="measure__grid" x1="0" y1="100" x2="300" y2="100"/>
+            <path class="measure__depth" d="M6 30 C 46 34, 66 50, 96 56 S 156 80, 186 92 S 256 114, 294 118" transform="translate(0 12)" filter="url(#dtcSoft)"/>
+            <path class="measure__area" d="M6 30 C 46 34, 66 50, 96 56 S 156 80, 186 92 S 256 114, 294 118 L294 150 L6 150 Z"/>
+            <line class="measure__axis" x1="0" y1="150" x2="300" y2="150"/>
+            <path class="measure__path" d="M6 30 C 46 34, 66 50, 96 56 S 156 80, 186 92 S 256 114, 294 118"/>
+            <path class="measure__shine" d="M6 30 C 46 34, 66 50, 96 56 S 156 80, 186 92 S 256 114, 294 118" transform="translate(0 -2)"/>
+            <circle class="measure__halo" cx="294" cy="118" r="14"/>
+            <circle class="measure__dot" cx="294" cy="118" r="7"/>
+          </svg>
+          <p class="chart__label caption"><span>Week 1</span><span>Week 8</span></p>
+        </div>
+        <p class="caption">3 · Measurable</p>
+        <h3 class="heading">A score families can follow</h3>
+        <p>How much thinking slows movement — tracked weekly.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 Business model -->
+<section class="band" id="business" aria-labelledby="business-title">
+  <div class="container split">
+    <div class="photo photo--square">
+      <img src="img/Doctor-JOYchum-card.jpeg" width="896" height="1200" loading="lazy" alt="A doctor talks with an older woman across her desk; a JOYchum card lies on the desk between them.">
+    </div>
+    <div>
+      <p class="eyebrow">04 — Business model</p>
+      <h2 class="title" id="business-title">B2B2C wellness. No reimbursement dependency.</h2>
+      <ul class="glass-panel channels">
+        <li><span class="channel__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M10 21v-4h4v4M12 8v4M10 10h4"/></svg></span><div><h3 class="channel__title">Clinics &amp; care facilities</h3><p class="caption">Licensed as a resident wellness activity.</p></div><span class="tag-example">Primary</span></li>
+        <li><span class="channel__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg></span><div><h3 class="channel__title">Families</h3><p class="caption">Home subscription with caregiver visibility.</p></div><span class="tag-example">B2C</span></li>
+        <li><span class="channel__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3 class="channel__title">Insurers</h3><p class="caption">Explored once we have pilot data.</p></div><span class="tag-example">Later</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Roadmap -->
+<section class="band band--sunken" id="roadmap" aria-labelledby="roadmap-title">
+  <div class="container">
+    <div>
+      <p class="eyebrow">05 — 12-month roadmap</p>
+      <h2 class="title" id="roadmap-title">Germany first. Europe next.</h2>
+    </div>
+    <ol class="timeline">
+      <li><p class="caption">Months 0–2</p><h3 class="milestone__title">Advisor &amp; foundations</h3><p class="caption">Clinical advisor, incorporation, GDPR by design</p></li>
+      <li><p class="caption">Months 2–5</p><h3 class="milestone__title">Build the MVP</h3><p class="caption">One voice-first dual-task flow</p></li>
+      <li><p class="caption">Months 5–6</p><h3 class="milestone__title">Internal testing</h3><p class="caption">Refine with advisor, pilot protocol</p></li>
+      <li><p class="caption">Months 6–8</p><h3 class="milestone__title">German pilot</h3><p class="caption">1 clinic · ~20 users · 8 weeks</p></li>
+      <li><p class="caption">Months 8–10</p><h3 class="milestone__title">Second EU market</h3><p class="caption">Austria or the Netherlands</p></li>
+      <li><p class="caption">Months 10–12</p><h3 class="milestone__title">Seed-ready</h3><p class="caption">Germany proven, EU pipeline forming</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 06 Team -->
+<section class="band" id="team" aria-labelledby="team-title">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">06 — Team</p>
+        <h2 class="title" id="team-title">Three founders, three roles.</h2>
+      </div>
+      <p class="text">Next hire: a German clinical advisor — our top priority for the first 90 days.</p>
+    </div>
+    <ul class="cards cards--3">
+      <li class="card member"><span class="avatar" aria-hidden="true">AU</span><h3 class="heading">Ashutosh Upadhyay</h3><p class="caption">Business</p><p>Strategy, partnerships, fundraising</p></li>
+      <li class="card member"><span class="avatar" aria-hidden="true">T</span><h3 class="heading">Tushar</h3><p class="caption">Developer</p><p>Voice product and the adaptive engine</p></li>
+      <li class="card member"><span class="avatar" aria-hidden="true">J</span><h3 class="heading">Johannes</h3><p class="caption">UI/UX · Germany</p><p>Senior-friendly design, clinic network</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07 The ask -->
+<section class="band band--blue" id="invest" aria-labelledby="invest-title">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">07 — The ask</p>
+      <h2 class="display ask__value" id="invest-title">€500K</h2>
+      <p class="text">Pre-seed round for 12 months of runway: a working MVP, one completed German clinic pilot, and a second EU market opened.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="mailto:hello@joychum.eu?subject=JOYchum%20pitch%20deck">Request the deck</a>
+        <a class="btn btn--secondary" href="mailto:hello@joychum.eu?subject=Pilot%20partnership">Become a pilot partner</a>
+      </div>
+    </div>
+    <div class="glass-panel funds">
+      <h3 class="caption funds__title">Use of funds</h3>
+      <div class="funds__bar" aria-hidden="true"><span class="funds__seg funds__seg--1" style="width:35%"></span><span class="funds__seg funds__seg--2" style="width:20%"></span><span class="funds__seg funds__seg--3" style="width:20%"></span><span class="funds__seg funds__seg--4" style="width:15%"></span><span class="funds__seg funds__seg--5" style="width:10%"></span></div>
+      <ul class="funds__legend">
+          <li><span class="funds__dot funds__seg--1"></span><span>Founder runway</span><span>35%</span></li>
+          <li><span class="funds__dot funds__seg--2"></span><span>Clinical advisor, legal &amp; GDPR</span><span>20%</span></li>
+          <li><span class="funds__dot funds__seg--3"></span><span>German pilot &amp; second market</span><span>20%</span></li>
+          <li><span class="funds__dot funds__seg--4"></span><span>Infrastructure &amp; tooling</span><span>15%</span></li>
+          <li><span class="funds__dot funds__seg--5"></span><span>Buffer</span><span>10%</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 JOYchum — Just Older Youth chum</p>
+    <p class="footer__links"><a href="#top">Privacy</a> <a href="#top">Imprint</a></p><!-- TODO: echte Seiten für Privacy und Imprint verlinken -->
+  </div>
+</footer>
+
+<script>
+// Coach prompts rotate like a spoken sequence; paused with reduced motion or by the button.
+(function () {
+  var prompts = [
+    'Walk to the fridge. Name three things inside.',
+    'Stand on one leg. Count back from 20 in threes.',
+    'Step to the window. Spell your street backwards.',
+    'Walk slowly. Name a fruit for every step.'
+  ];
+  var el = document.getElementById('coach-prompt');
+  var btn = document.getElementById('coach-toggle');
+  if (!el || !btn || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var i = 0, timer = null;
+  function next() { i = (i + 1) % prompts.length; el.textContent = '“' + prompts[i] + '”'; }
+  function play() { timer = setInterval(next, 3600); btn.setAttribute('aria-pressed', 'false'); btn.setAttribute('aria-label', 'Pause example prompts'); }
+  function pause() { clearInterval(timer); timer = null; btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Play example prompts'); }
+  btn.hidden = false;
+  btn.addEventListener('click', function () { timer ? pause() : play(); });
+  play();
+})();
+</script>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var sel = [
+    '.hero__grid > div > *', '.hero__visual',
+    '.band .container > :not(.split):not(ul):not(ol)',
+    '.split > *', '.cards > li', '.steps > li', '.screens > li', '.plain > li', '.features > li', '.section-head > *'
+  ].join(',');
+  var all = Array.prototype.slice.call(document.querySelectorAll(sel));
+  var picked = all.filter(function (el) {
+    for (var p = el.parentElement; p; p = p.parentElement) { if (all.indexOf(p) > -1) return false; }
+    return true;
+  });
+  if (!('IntersectionObserver' in window)) { root.classList.remove('js'); return; }
+  picked.forEach(function (el) {
+    var sibs = Array.prototype.filter.call(el.parentElement.children, function (c) { return picked.indexOf(c) > -1; });
+    el.style.setProperty('--i', Math.min(sibs.indexOf(el), 4));
+    el.classList.add('reveal');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  picked.forEach(function (el) { io.observe(el); });
+  // Anything reached by an anchor jump or print shows immediately.
+  window.addEventListener('beforeprint', function () { picked.forEach(function (el) { el.classList.add('is-in'); }); });
+})();
+</script>
+</body>
+</html>
