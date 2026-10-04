@@ -680,3 +680,19 @@ footer { background: var(--blue-50); color: var(--ink); border-top: 1px solid co
 footer p { color: var(--ink-muted); }
 footer a { color: var(--accent); }
 footer :focus-visible { outline-color: var(--accent); }
+
+/* ── In the app: phone-framed screenshots ── */
+.screens-row { list-style: none; padding: 0; display: flex; gap: var(--space-4); overflow-x: auto;
+  scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding: var(--space-3) var(--gutter) var(--space-4); }
+.screens-row > li { flex: 0 0 min(64vw, 240px); scroll-snap-align: center; }
+@media (min-width: 1024px) {
+  .screens-row { overflow: visible; margin-inline: 0; padding-inline: 0; justify-content: space-between; gap: var(--space-3); }
+  .screens-row > li { flex: 1 1 0; min-width: 0; }
+  .screens-row > li:nth-child(even) { transform: translateY(var(--space-5)); }
+  .screens-row { padding-bottom: calc(var(--space-6) + var(--space-3)); }
+}
+.device { margin: 0; display: grid; gap: var(--space-3); text-align: center; }
+.device__screen { border-radius: 28px; padding: 7px; background: var(--ink);
+  box-shadow: 0 1px 0 rgb(255 255 255 / .15) inset, var(--glass-shadow); }
+.device__screen img { width: 100%; height: auto; border-radius: 21px; aspect-ratio: 600 / 1190; object-fit: cover; object-position: top; background: var(--surface); }
+.device figcaption { font-weight: 700; color: var(--ink); }

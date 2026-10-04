@@ -30,6 +30,34 @@ const pairs: Array<{ body: string; mind: string; tone?: "faded" | "soft" }> = [
   { body: "Tap toes", mind: "Name colours", tone: "faded" },
 ];
 
+const screens: Array<{ src: string; label: string; alt: string }> = [
+  {
+    src: "/images/app-home.jpg",
+    label: "Today",
+    alt: "JOYchum home screen: a spoken greeting, today's exercise 'Sit-to-Stand & Alphabetical Recall' and a large Start button.",
+  },
+  {
+    src: "/images/app-nudge.jpg",
+    label: "Daily nudge",
+    alt: "JOYchum reminder settings: choose a morning, late-morning or afternoon time for a friendly daily reminder.",
+  },
+  {
+    src: "/images/app-progress.jpg",
+    label: "Your progress",
+    alt: "JOYchum progress screen: a weekly streak, exercises done and a 60-day progress bar.",
+  },
+  {
+    src: "/images/app-report.jpg",
+    label: "Report for my doctor",
+    alt: "JOYchum summary screen: a short report to show a doctor or family, shared only when you tap Share.",
+  },
+  {
+    src: "/images/app-pin.jpg",
+    label: "Private by choice",
+    alt: "JOYchum optional 4-digit PIN screen with a large number pad and a note that it can be skipped.",
+  },
+];
+
 const ways: Array<{ icon: "home" | "clinic" | "family"; title: string; text: string; tag: string }> = [
   {
     icon: "home",
@@ -386,7 +414,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 04 Where to use it */}
+        {/* 04 In the app */}
+        <section className="band band--sunken" id="app" aria-labelledby="app-title">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">04 — In the app</p>
+                <h2 className="title" id="app-title">
+                  Big buttons, plain words, and a voice that talks you through.
+                </h2>
+              </div>
+              <p className="text">
+                A first look at JOYchum on a phone. Every screen is read aloud, with large targets and
+                high contrast, so it stays easy to use.
+              </p>
+            </div>
+            <ul className="screens-row">
+              {screens.map((sc) => (
+                <li key={sc.src}>
+                  <figure className="device">
+                    <div className="device__screen">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={sc.src} width={600} height={1190} loading="lazy" alt={sc.alt} />
+                    </div>
+                    <figcaption className="caption">{sc.label}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* 05 Where to use it */}
         <section className="band" id="access" aria-labelledby="access-title">
           <div className="container split">
             <div className="photo photo--square">
@@ -400,7 +459,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <p className="eyebrow">04 — Where to use it</p>
+              <p className="eyebrow">05 — Where to use it</p>
               <h2 className="title" id="access-title">
                 At home, or through your clinic or care home.
               </h2>
@@ -426,7 +485,7 @@ export default function Home() {
         <section className="band band--sunken" id="roadmap" aria-labelledby="roadmap-title">
           <div className="container">
             <div>
-              <p className="eyebrow">05 — What&apos;s coming</p>
+              <p className="eyebrow">06 — What&apos;s coming</p>
               <h2 className="title" id="roadmap-title">
                 Starting in Germany, then across Europe.
               </h2>
@@ -448,7 +507,7 @@ export default function Home() {
           <div className="container">
             <div className="section-head">
               <div>
-                <p className="eyebrow">06 — Who we are</p>
+                <p className="eyebrow">07 — Who we are</p>
                 <h2 className="title" id="team-title">
                   Three founders, one goal: more good years at home.
                 </h2>
@@ -474,7 +533,7 @@ export default function Home() {
         <section className="band band--blue" id="join" aria-labelledby="join-title">
           <div className="container split split--top">
             <div>
-              <p className="eyebrow">07 — Get early access</p>
+              <p className="eyebrow">08 — Get early access</p>
               <h2 className="display ask__value" id="join-title">
                 Be among the first.
               </h2>
