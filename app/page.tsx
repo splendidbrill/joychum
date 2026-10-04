@@ -162,12 +162,8 @@ export default function Home() {
       <header>
         <div className="container nav">
           <a className="logo" href="#top" aria-label="JOYchum, back to top">
-            <svg className="mode" width="36" height="24" viewBox="0 0 48 32" aria-hidden="true">
-              <circle className="m-move" cx="18" cy="16" r="14" />
-              <circle className="m-mind" cx="30" cy="16" r="14" />
-              <circle className="m-both" cx="30" cy="16" r="14" clipPath="url(#lensL)" />
-            </svg>
-            JOYchum
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo.webp" width={765} height={265} alt="JOYchum" />
           </a>
           <nav aria-label="Sections">
             <ul className="nav__links">

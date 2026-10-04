@@ -696,3 +696,7 @@ footer :focus-visible { outline-color: var(--accent); }
   box-shadow: 0 1px 0 rgb(255 255 255 / .15) inset, var(--glass-shadow); }
 .device__screen img { width: 100%; height: auto; border-radius: 21px; aspect-ratio: 600 / 1190; object-fit: cover; object-position: top; background: var(--surface); }
 .device figcaption { font-weight: 700; color: var(--ink); }
+
+/* ── Logo image: transparent webp, works on light and dark surfaces ── */
+.logo img { height: 52px; width: auto; }
+@media (min-width: 1024px) { .logo img { height: 60px; } }
