@@ -5,15 +5,15 @@ import { siteConfig } from "./config";
 const { contactEmail } = siteConfig;
 
 const earlyAccess = `mailto:${contactEmail}?subject=${encodeURIComponent("JOYchum early access")}`;
-const partner = `mailto:${contactEmail}?subject=${encodeURIComponent("JOYchum for our clinic or care home")}`;
+const partner = `mailto:${contactEmail}?subject=${encodeURIComponent("JOYchum for our clinic or senior living community")}`;
 
 const stats: Array<{ value: string; text: string }> = [
-  { value: "1 in 3", text: "adults over 65 fall at least once a year" },
+  { value: "1 in 4", text: "Americans over 65 fall at least once a year" },
   { value: "1", text: "short session a day is all JOYchum asks of you" },
   { value: "0", text: "screens to watch while you move — the coach talks you through it" },
 ];
 
-/** The last row is JOYchum, so it carries the ink colour and heavier weight. */
+/** The last row is JOYchum, so it carries the ink color and heavier weight. */
 const compare: Array<{ name: string; body: boolean; mind: boolean; us?: boolean }> = [
   { name: "Brain-training apps", body: false, mind: true },
   { name: "Senior fitness apps", body: true, mind: false },
@@ -27,7 +27,7 @@ const pairs: Array<{ body: string; mind: string; tone?: "faded" | "soft" }> = [
   { body: "Balance", mind: "Count back" },
   { body: "Reach", mind: "Recall a list" },
   { body: "Step", mind: "Spell words", tone: "soft" },
-  { body: "Tap toes", mind: "Name colours", tone: "faded" },
+  { body: "Tap toes", mind: "Name colors", tone: "faded" },
 ];
 
 const screens: Array<{ src: string; label: string; alt: string }> = [
@@ -67,7 +67,7 @@ const ways: Array<{ icon: "home" | "clinic" | "family"; title: string; text: str
   },
   {
     icon: "clinic",
-    title: "Clinics & care homes",
+    title: "Clinics & senior living",
     text: "Offered to residents and patients as a daily wellness activity.",
     tag: "Pilot planned",
   },
@@ -92,34 +92,40 @@ const roadmap: Array<{ when: string; what: string; detail: string }> = [
   },
   {
     when: "Then",
-    what: "German pilot",
-    detail: "With a clinic · about 20 people · 8 weeks",
+    what: "U.S. pilot",
+    detail: "With a clinic or senior living community · about 20 people · 8 weeks",
   },
   {
     when: "After that",
-    what: "More countries",
-    detail: "Austria or the Netherlands next",
+    what: "More states",
+    detail: "Growing to more clinics and communities nationwide",
   },
 ];
 
-const team: Array<{ initials: string; name: string; role: string; focus: string }> = [
+const team: Array<{ photo: string; name: string; role: string; focus: string }> = [
   {
-    initials: "AU",
-    name: "Ashutosh Upadhyay",
-    role: "Partnerships",
-    focus: "Working with clinics and care homes to bring JOYchum to you",
+    photo: "/images/team-johannes.jpg",
+    name: "Johannes",
+    role: "UX Design",
+    focus: "Making everything easy to see, hear and use",
   },
   {
-    initials: "T",
+    photo: "/images/team-tushar.jpg",
     name: "Tushar",
-    role: "Developer",
+    role: "Tech Lead",
     focus: "Building the voice coach and the way it adapts to you",
   },
   {
-    initials: "J",
-    name: "Johannes",
-    role: "Design · Germany",
-    focus: "Making everything easy to see, hear and use",
+    photo: "/images/team-peter.jpg",
+    name: "Peter",
+    role: "Network & Marketing",
+    focus: "Spreading the word and building the community around JOYchum",
+  },
+  {
+    photo: "/images/team-ashutosh.jpg",
+    name: "Ashutosh Upadhyay",
+    role: "Business Development",
+    focus: "Working with clinics and senior living communities to bring JOYchum to you",
   },
 ];
 
@@ -134,11 +140,11 @@ const faqs: Array<{ q: string; a: string }> = [
   },
   {
     q: "Is JOYchum medical treatment?",
-    a: "No. JOYchum is a wellness programme, not a medical treatment. Please check with your doctor before starting any new exercise, and keep something sturdy within reach.",
+    a: "No. JOYchum is a wellness program, not a medical treatment. Please check with your doctor before starting any new exercise, and keep something sturdy within reach.",
   },
   {
     q: "What happens to my information?",
-    a: "We design for privacy from the start and follow European data-protection rules (GDPR).",
+    a: "We design for privacy from the start. Your progress stays on your device unless you choose to share it, and we never sell your personal information.",
   },
 ];
 
@@ -240,7 +246,7 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
-              <p className="caption stats__source">Source: World Health Organization (approx.)</p>
+              <p className="caption stats__source">Source: U.S. Centers for Disease Control and Prevention (CDC)</p>
             </div>
           </div>
         </section>
@@ -280,7 +286,7 @@ export default function Home() {
                 Most apps train your body or your mind. JOYchum trains both at once.
               </h2>
               <p className="text">
-                Everyday life asks for both together — walking while you talk, carrying shopping while
+                Everyday life asks for both together — walking while you talk, carrying groceries while
                 you think. So that is how JOYchum trains.
               </p>
               <div className="glass-panel compare-wrap">
@@ -483,7 +489,7 @@ export default function Home() {
             <div>
               <p className="eyebrow">06 — What&apos;s coming</p>
               <h2 className="title" id="roadmap-title">
-                Starting in Germany, then across Europe.
+                Starting in the U.S., then coast to coast.
               </h2>
             </div>
             <ol className="timeline">
@@ -505,17 +511,18 @@ export default function Home() {
               <div>
                 <p className="eyebrow">07 — Who we are</p>
                 <h2 className="title" id="team-title">
-                  Three founders, one goal: more good years at home.
+                  One team, one goal: more good years at home.
                 </h2>
               </div>
               <p className="text">
-                We&apos;re bringing a German clinical advisor on board to help shape every exercise.
+                We&apos;re bringing a U.S. clinical advisor on board to help shape every exercise.
               </p>
             </div>
-            <ul className="cards cards--3">
+            <ul className="cards cards--4">
               {team.map((m) => (
                 <li key={m.name} className="card member">
-                  <span className="avatar" aria-hidden="true">{m.initials}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img className="avatar" src={m.photo} width={96} height={96} loading="lazy" alt={`Portrait of ${m.name}`} />
                   <h3 className="heading">{m.name}</h3>
                   <p className="caption">{m.role}</p>
                   <p>{m.focus}</p>
@@ -535,14 +542,14 @@ export default function Home() {
               </h2>
               <p className="text">
                 Send us a note and we&apos;ll tell you as soon as JOYchum is ready to try. Running a
-                clinic or care home? We&apos;d love to talk about bringing it to your residents.
+                clinic or senior living community? We&apos;d love to talk about bringing it to your residents.
               </p>
               <div className="btn-row">
                 <a className="btn btn--primary" href={earlyAccess}>
                   Get early access
                 </a>
                 <a className="btn btn--secondary" href={partner}>
-                  For clinics &amp; care homes
+                  For clinics &amp; senior living
                 </a>
               </div>
             </div>
@@ -567,7 +574,7 @@ export default function Home() {
           <p className="footer__links">
             <a href={`mailto:${contactEmail}`}>Contact</a>
             <a href="#top">Privacy</a>
-            <a href="#top">Imprint</a>
+            <a href="#top">Terms</a>
           </p>
         </div>
       </footer>

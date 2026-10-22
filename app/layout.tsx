@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description,
   openGraph: {
     type: "website",
+    locale: "en_US",
     title: "JOYchum: Stay steady. Stay sharp. Stay home.",
     description,
   },
@@ -24,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     // PageEffects adds the "js" class on mount, hence suppressHydrationWarning.
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-US"suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
